@@ -1,0 +1,42 @@
+h1:first-of-type {
+    text-transform: uppercase;
+}
+
+/*-----------------------------MOBILE OPTIMIZATION----------------------------*/
+p, h1, em{
+    display: block;
+}
+.quill-cover {
+    z-index: 1;
+    width: 100%;
+}
+
+.ql-editor{
+    min-height: 15em;
+    font-size: 1.25em;
+}
+
+/*-----------------------------TABLET OPTIMIZATION----------------------------*/
+
+@media only screen and (min-device-width: 37em) {
+
+    .quill-cover {
+        width: 70%;
+    }
+
+    .ql-editor {
+        font-size: 1.25em;
+    }
+}
+
+/*-----------------------------DESKTOP OPTIMIZATION----------------------------*/
+@media only screen and (min-device-width: 64em){
+    
+    .quill-cover{
+        width: 60%;
+    }
+
+    .ql-editor{
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+h1{
+    margin: 15px;
+    color: rgb(41, 41, 46);
+}
+
+.form{
+    min-height: auto;
+    margin-top: 37.5%;
+    display: block;
+    text-align: center;
+}
+
+#author, #date, #title, #category, #content{
+    border: 1.5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0.188em 1.25em -0.5em grey;
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+#content{
+    min-height: 120px;
+}
+
+#image{
+    margin: 0 auto;
+    width: 60%;
+    margin-bottom: 15px;
+    border: 1.5px solid gray;
+    border-radius: 5px;
+}
+
+#submit-button{
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    height: 30px;
+    color: white;
+    background-color: #c93655;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1.5px solid white;
+}
