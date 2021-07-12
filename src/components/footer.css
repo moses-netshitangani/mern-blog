@@ -12,7 +12,7 @@
     background-image: url("../imgs/cover.png");
     height: 3.5em;
     width: 70%;
-    margin-bottom: 0.25em;
+    margin: 0 auto;
 }
 
 .social-icons{
@@ -20,6 +20,8 @@
     height: 3em;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 .social-icons div {
@@ -61,11 +63,17 @@
 /* End of mobile version */
 
 /* Tablet version */
-@media only screen and(min-device-width: 37em) {
-    /* .footer-logo {
-        height: 1em;
-        width: 20%;
-    } */
+@media only screen and (min-device-width: 37em) {
+    .footer-logo {
+        height: 3em;
+        width: 35%;
+    }
+
+    .social-icons {
+        height: 2.5em;
+        width: 25%;
+        justify-content: space-around;
+    }
 }
 /* End of tablet version */
 
@@ -83,7 +91,7 @@
 
     .social-icons {
         height: 5em;
-        width: 40%;
+        width: 15%;
     }
 
     .social-icons div {
