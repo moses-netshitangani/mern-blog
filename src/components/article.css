@@ -88,6 +88,7 @@
 
     .article-inner-container{
         width: 70%;
+        margin: 0 auto;
     }
 
     .article-inner-container img {
@@ -122,7 +123,7 @@
 /* ---------------------DESKTOP OPTIMIZATION------------------------*/
 
 @media only screen and (min-device-width: 64em){
-
+    
     .article-inner-container{
         width: 55%;
     }
