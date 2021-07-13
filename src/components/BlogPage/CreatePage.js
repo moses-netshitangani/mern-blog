@@ -75,12 +75,12 @@ function CreatePage() {
 
     // styling for the input field cover
     let input_container = {
-        display: 'block',
         margin: '2.5em auto auto auto',
-        width: '16em',
+        width: '15em',
         height: '3em',
         padding: '0.5em 0',
-        display: 'flex'
+        display: 'flex',
+        justifyContent: 'space-between'
     }
 
     // styling for the input field

@@ -2,6 +2,10 @@ h1:first-of-type {
     text-transform: uppercase;
 }
 
+.quill-cover {
+    margin: 0 auto;
+}
+
 /*-----------------------------MOBILE OPTIMIZATION----------------------------*/
 p, h1, em{
     display: block;
