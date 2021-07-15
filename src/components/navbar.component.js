@@ -106,10 +106,10 @@ const Navbar = () => {
                 admin.password = res.data[0].password;
 
                 // check for correctness
-                if(bcrypt.compare(password, admin.password) &&
-                    (username === admin.username)) {
-                    
-                    // need to make user icon vanish
+                bcrypt.compare(password, admin.password, (err, res) => {
+                    if(res && (username === admin.username))
+                    {
+                        // need to make user icon vanish
 
                     // need to make sure user is authorized
                     // & that they can navigate or refresh
@@ -120,11 +120,13 @@ const Navbar = () => {
 
                     // ALSO NEED TO ENSURE THE ADMIN ROUTE
                     // CANNOT BE ACCESSED DIRECTLY (privateroute)
-                }
-                else {
-                    // display error page
-
-                }
+                    }
+                    else
+                    {
+                        //display error page
+                    }
+                });
+                
             })
             .catch(err => console.log(err));
     }
