@@ -111,19 +111,20 @@ const Navbar = () => {
                     {
                         // need to make user icon vanish
 
-                    // need to make sure user is authorized
-                    // & that they can navigate or refresh
-                    // without having to re enter password
+                        // need to make sure user is authorized
+                        // & that they can navigate or refresh
+                        // without having to re enter password
 
-                    // need to navigate to /admin route
-                    window.location.href = "admin";
+                        // need to navigate to /admin route
+                        window.location.href = "/admin";
 
-                    // ALSO NEED TO ENSURE THE ADMIN ROUTE
-                    // CANNOT BE ACCESSED DIRECTLY (privateroute)
+                        // ALSO NEED TO ENSURE THE ADMIN ROUTE
+                        // CANNOT BE ACCESSED DIRECTLY (privateroute)
                     }
                     else
                     {
                         //display error page
+                        console.log(err)
                     }
                 });
                 
