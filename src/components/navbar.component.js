@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import './navbar.css';
 import axios from 'axios';
@@ -64,10 +64,23 @@ const Navbar = () => {
     {
         setStatus("login-grey");
     }
+
     // closing the admin login page
     const closeLogin = () => {
         setStatus("login-grey-inactive");
     }
+
+    // login icon state
+    const [login_icon, setLoginIcon] = useState("login-icon");
+
+    // hide login icon in admin page
+    useEffect(() => 
+    {
+        if(window.location.href.includes("admin"))
+        {
+           setLoginIcon("hide");
+        }
+    }, []);
 
     // // submitting login details
     // const onSubmit = e => {
@@ -109,7 +122,7 @@ const Navbar = () => {
                 bcrypt.compare(password, admin.password, (err, res) => {
                     if(res && (username === admin.username))
                     {
-                        // need to make user icon vanish
+                        
 
                         // need to make sure user is authorized
                         // & that they can navigate or refresh
@@ -117,6 +130,9 @@ const Navbar = () => {
 
                         // need to navigate to /admin route
                         window.location.href = "/admin";
+
+                        // need to make user icon vanish
+                        // setLoginIcon("hide");
 
                         // ALSO NEED TO ENSURE THE ADMIN ROUTE
                         // CANNOT BE ACCESSED DIRECTLY (privateroute)
@@ -145,7 +161,7 @@ const Navbar = () => {
                     </div>
                     
                     {/* The admin login icon */}
-                    <div className="login-icon" onClick={openLogin}>
+                    <div className={login_icon} onClick={openLogin}>
                     </div>
 
                     {/* The burger menu */}

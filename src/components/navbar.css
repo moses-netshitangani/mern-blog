@@ -405,6 +405,10 @@ a{
         background-size: cover;
     }
 
+    .hide {
+        display: none;
+    }
+
     .login-grey{
         padding-top: 7em;
     }
