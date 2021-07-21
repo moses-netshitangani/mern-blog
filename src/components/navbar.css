@@ -2,6 +2,11 @@
     cursor: pointer;
 }
 
+.hide {
+    display: none;
+}
+
+
 /* ----------------------------------------------------
                     MOBILE VERSION
 ---------------------------------------------------- */
@@ -111,6 +116,33 @@ a{
 
 .login-page h3 {
     margin-top: 1em;
+}
+
+.login-fail {
+    padding: 1em;
+    text-align: center;
+}
+
+.login-fail h3:first-of-type {
+    color: rgb(228, 98, 98);
+}
+
+.login-fail h3{
+    margin: 1em 0 0 0;
+    color: #34343a;
+}
+
+.login-fail button {
+    margin-top: 5em;
+    background-image: linear-gradient(to right, orange, #c93655);
+    display: block;
+    margin: 4em auto;
+    width: 12em;
+    height: 3em;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 0.65em;
 }
 
 .cancel-btn {
@@ -405,9 +437,6 @@ a{
         background-size: cover;
     }
 
-    .hide {
-        display: none;
-    }
 
     .login-grey{
         padding-top: 7em;

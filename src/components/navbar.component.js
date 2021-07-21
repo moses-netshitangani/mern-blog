@@ -48,7 +48,9 @@ const Navbar = () => {
     // admin login variables
     let [username, setName] = useState("");
     let [password, setPassword] = useState("");
-    let [status, setStatus] = useState("login-grey-inactive")
+    let [status, setStatus] = useState("login-grey-inactive");
+    let [loginPage, setLoginPage] = useState("login-page");
+    let [failStatus, setFail] = useState("hide");
 
     // capturing username and password
     const changeName = e => {
@@ -68,10 +70,23 @@ const Navbar = () => {
     // closing the admin login page
     const closeLogin = () => {
         setStatus("login-grey-inactive");
+        setLoginPage("login-page");
+        setFail("hide");
+    }
+
+    // closing the failed login page
+    const closeFailLogin = () => {
+
+        // close pop up
+        setFail("hide");
+
+        // show login page
+        setLoginPage("login-page");
     }
 
     // login icon state
     const [login_icon, setLoginIcon] = useState("login-icon");
+
 
     // hide login icon in admin page
     useEffect(() => 
@@ -122,8 +137,6 @@ const Navbar = () => {
                 bcrypt.compare(password, admin.password, (err, res) => {
                     if(res && (username === admin.username))
                     {
-                        
-
                         // need to make sure user is authorized
                         // & that they can navigate or refresh
                         // without having to re enter password
@@ -131,16 +144,21 @@ const Navbar = () => {
                         // need to navigate to /admin route
                         window.location.href = "/admin";
 
-                        // need to make user icon vanish
-                        // setLoginIcon("hide");
 
                         // ALSO NEED TO ENSURE THE ADMIN ROUTE
                         // CANNOT BE ACCESSED DIRECTLY (privateroute)
                     }
                     else
                     {
+                        // close admin details page
+                        setLoginPage("hide");
+
+                        // erase entered details
+                        document.getElementById("email").value = "";
+                        document.getElementById("password").value = "";
+
                         //display error page
-                        console.log(err)
+                        setFail("login-page");
                     }
                 });
                 
@@ -189,7 +207,7 @@ const Navbar = () => {
 
                 {/* login page popup */}
                 <div className={status}>
-                    <div className="login-page">
+                    <div className={loginPage}>
                         <div className="cancel-btn" onClick={closeLogin}></div>
                         <h3>Admin Login</h3>
 
@@ -204,7 +222,19 @@ const Navbar = () => {
                             <input type='submit' className='submit-button' value="Login" />
                         </form>
                     </div>
+                    
+                     {/* login failed popup */}
+                    <div className={failStatus}>
+                    <div className="login-fail">
+                        <div className="cancel-btn" onClick={closeLogin}></div>
+                        <h3>Login failed!</h3>
+                        <h3>Username or Password incorrect</h3>
+                        <button onClick={closeFailLogin}>Try again</button>
+                    </div>
                 </div>
+                </div>
+
+               
 
             </div>
 
