@@ -6,6 +6,9 @@
     display: none;
 }
 
+button:hover {
+    cursor: pointer;
+}
 
 /* ----------------------------------------------------
                     MOBILE VERSION
@@ -144,6 +147,7 @@ a{
     color: white;
     font-size: 0.65em;
 }
+
 
 .cancel-btn {
     width: 1.75em;
