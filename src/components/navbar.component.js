@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import './navbar.css';
 import axios from 'axios';
+import auth from './auth';
 const bcrypt = require('bcryptjs');
 
 const Navbar = () => {
@@ -140,6 +141,7 @@ const Navbar = () => {
                         // need to make sure user is authorized
                         // & that they can navigate or refresh
                         // without having to re enter password
+                        auth.login();
 
                         // need to navigate to /admin route
                         window.location.href = "/admin";

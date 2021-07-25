@@ -4,23 +4,21 @@ class Auth
     {
         this.authenticated = false;
     }
-}
 
-login(cb)
-{
-    this.authenticated = true;
-    cb();
-}
+    login()
+    {
+        this.authenticated = true;
+    }
 
-logout(cb)
-{
-    this.authenticated = false;
-    cb();
-}
+    logout()
+    {
+        this.authenticated = false;
+    }
 
-isAuthenticated()
-{
-    return this.authenticated;
+    isAuthenticated()
+    {
+        return this.authenticated;
+    }
 }
 
 export default new Auth();

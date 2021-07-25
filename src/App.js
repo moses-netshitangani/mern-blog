@@ -8,6 +8,7 @@ import Description from './components/article-description.component';
 import FullArticle from './components/full-article';
 import About from './components/about.component';
 import Footer from './components/footer.component';
+import ProtectedRoute from './components/protected.route';
 
 import CreatePage from './components/BlogPage/CreatePage';
 
@@ -23,7 +24,10 @@ function App() {
             {/* problem is above line and below line render same component. Need to change data within component */}
             <Route path="/topic" component={Description}></Route>
             <Route path="/articles/single" component={FullArticle}></Route>
-            <Route path="/admin" component={CreatePage}></Route>
+            {/* <Route path="/admin" component={CreatePage}></Route> */}
+            <ProtectedRoute
+              path="/admin" component={CreatePage}
+            />
             <Route path="/about" component={About}></Route>
           </Switch>
         </BlogArticles>
