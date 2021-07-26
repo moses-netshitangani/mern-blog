@@ -26,7 +26,7 @@ function App() {
             <Route path="/articles/single" component={FullArticle}></Route>
             {/* <Route path="/admin" component={CreatePage}></Route> */}
             <ProtectedRoute
-              path="/admin" component={CreatePage}
+              path="/admin" exact component={CreatePage}
             />
             <Route path="/about" component={About}></Route>
           </Switch>
