@@ -8,7 +8,6 @@ const ProtectedRoute = ({component: Component, ...rest}) =>
 
     useEffect(() => {
         onLoginChange(localStorage.getItem("login"));
-        console.log(`local storage from Proute comp: ${localStorage.getItem("login")}`);
     })
 
     return(

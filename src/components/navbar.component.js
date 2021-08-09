@@ -45,6 +45,13 @@ const Navbar = props => {
         openLogin();
     }
 
+    // logout
+    let logout = () => {
+        updateMenu();
+        localStorage.clear();
+        window.location.href = "/";
+    }
+
     // admin login variables
     let [username, setName] = useState("");
     let [password, setPassword] = useState("");
@@ -95,6 +102,23 @@ const Navbar = props => {
         {
            setLoginIcon("hide");
         }
+
+        let loginComp = document.getElementById("login");
+        let logoutComp = document.getElementById("logout");
+
+        // replace admin login option with logout
+        if(localStorage.getItem("login") === "true" || localStorage.getItem("login"))
+        {
+            // replace Admin login option with Sign out option
+            loginComp.style.display = "none";
+            logoutComp.style.display = "inherit";
+        }
+        else
+        {
+            // replace Admin login option with Sign out option
+            loginComp.style.display = "inherit";
+            logoutComp.style.display = "none";
+        }
     }, []);
 
     // // submitting login details
@@ -137,23 +161,12 @@ const Navbar = props => {
                 bcrypt.compare(password, admin.password, (err, res) => {
                     if(res && (username === admin.username))
                     {
-                        // need to make sure user is authorized
-                        // & that they can navigate or refresh
-                        // without having to re enter password
-                        // console.log(props.stateAuth);
+                        // change login state and send it back to parent
                         props.authComp.login();
                         props.onAuthChange(props.authComp.isAuthenticated());
-                        // console.log(props.stateAuth);
 
-                        // ensure state persists
-                        // localStorage.setItem("login", props.stateAuth.isAuthenticated());
-
-                        // need to navigate to /admin route
+                        // navigate to /admin
                         window.location.href = "/admin";
-
-
-                        // ALSO NEED TO ENSURE THE ADMIN ROUTE
-                        // CANNOT BE ACCESSED DIRECTLY (privateroute)
                     }
                     else
                     {
@@ -232,16 +245,14 @@ const Navbar = props => {
                     
                      {/* login failed popup */}
                     <div className={failStatus}>
-                    <div className="login-fail">
-                        <div className="cancel-btn" onClick={closeLogin}></div>
-                        <h3>Login failed!</h3>
-                        <h3>Username or Password incorrect</h3>
-                        <button onClick={closeFailLogin}>Try again</button>
+                        <div className="login-fail">
+                            <div className="cancel-btn" onClick={closeLogin}></div>
+                            <h3>Login failed!</h3>
+                            <h3>Username or Password incorrect</h3>
+                            <button onClick={closeFailLogin}>Try again</button>
+                        </div>
                     </div>
                 </div>
-                </div>
-
-               
 
             </div>
 
@@ -250,14 +261,17 @@ const Navbar = props => {
                 <Link to="/" onClick={updateMenu}>
                     <h4>Home</h4>
                 </Link>
-                {/* <Link to="/admin" onClick={updateMenu}>
-                    <h4>Admin</h4>
-                </Link> */}
+                <Link to="/admin" onClick={updateMenu}>
+                    <h4>Create</h4>
+                </Link>
                 <Link to="/about" onClick={updateMenu}>
                     <h4>About Me</h4>
                 </Link>
-                <Link onClick={mobileLogin}>
-                    <h4>Admin Sign in</h4>
+                <Link id="login" onClick={mobileLogin}>
+                    <h4>Admin Login</h4>
+                </Link>
+                <Link id="logout" onClick={logout}>
+                    <h4>Logout</h4>
                 </Link>
             </div>
         </div>
