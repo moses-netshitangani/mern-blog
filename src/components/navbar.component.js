@@ -2,10 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import './navbar.css';
 import axios from 'axios';
-import auth from './auth';
 const bcrypt = require('bcryptjs');
 
-const Navbar = () => {
+const Navbar = props => {
     // menu variable to hold state for the burger-bar
     let [menu, setMenu] = useState(false);
 
@@ -141,7 +140,13 @@ const Navbar = () => {
                         // need to make sure user is authorized
                         // & that they can navigate or refresh
                         // without having to re enter password
-                        auth.login();
+                        // console.log(props.stateAuth);
+                        props.authComp.login();
+                        props.onAuthChange(props.authComp.isAuthenticated());
+                        // console.log(props.stateAuth);
+
+                        // ensure state persists
+                        // localStorage.setItem("login", props.stateAuth.isAuthenticated());
 
                         // need to navigate to /admin route
                         window.location.href = "/admin";
