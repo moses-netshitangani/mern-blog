@@ -32,7 +32,6 @@ function App() {
     else
     {
       onAuthChange(localStorage.getItem("login"));
-      console.log(`using LS auth should be ${localStorage.getItem("login")} but is ${stateAuth}`);
     }
   });
 
@@ -46,7 +45,6 @@ function App() {
             <Route path="/" exact component={Description}></Route>
             <Route path="/topic" component={Description}></Route>
             <Route path="/articles/single" component={FullArticle}></Route>
-            {/* <Route path="/admin" component={CreatePage}></Route> */}
             <ProtectedRoute path="/admin" exact component={CreatePage} stateAuth={stateAuth} />
             <Route path="/about" component={About}></Route>
           </Switch>

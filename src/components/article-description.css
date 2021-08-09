@@ -195,9 +195,10 @@
         filter: brightness(90%);
     }
 
-    .article img{
+    .article img, .article iframe, .article video{
         height: 70%;
-        width: 100%;
+        min-width: 20em;
+        max-width: 20em;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
         order: 1;
