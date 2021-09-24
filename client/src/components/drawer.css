@@ -1,0 +1,9 @@
+div{
+    background-color: grey;
+    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translateX(100%); */
+    /* z-index: 1; */
+}

@@ -1,0 +1,125 @@
+/* Mobile */
+.footer-container{
+    background-image: linear-gradient(to right, #434343, #000000);
+    width: 100%;
+    height: 10em;
+    position: relative;
+    top: 0;
+    text-align: center;
+}
+
+.footer-logo{
+    background-image: url("../imgs/cover.png");
+    height: 3.5em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.social-icons{
+    width: 60%;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.social-icons div {
+    border-radius: 40px;
+    height: 2em;
+    width: 2em;
+}
+
+.insta{
+    background-image: url("../imgs/insta.png");
+    
+}
+
+.twitter{
+    background-image: url("../imgs/twitter.png");
+}
+
+.email{
+    background-image: url("../imgs/mail.png");
+}
+
+.copyright{
+    padding-top: 0.25em;
+}
+.copyright p{
+    color: white;
+    display: block;
+}
+
+.copyright p:nth-child(3){
+    display: none;
+}
+
+.img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* End of mobile version */
+
+/* Tablet version */
+@media only screen and (min-device-width: 37em) {
+    .footer-logo {
+        height: 3em;
+        width: 35%;
+    }
+
+    .social-icons {
+        height: 2.5em;
+        width: 25%;
+        justify-content: space-around;
+    }
+}
+/* End of tablet version */
+
+
+/* Desktop optimization */
+@media only screen and (min-device-width: 64em){
+    .footer-container {
+        height: 17.5em;
+    }
+
+    .footer-logo {
+        height: 6em;
+        width: 35%;
+    }
+
+    .social-icons {
+        height: 5em;
+        width: 15%;
+    }
+
+    .social-icons div {
+        height: 60%;
+        width: 3em;
+        transition: transform 0.5s;
+    }
+
+    .social-icons div:hover {
+        cursor: pointer;
+        background-color: #c93655;
+        transform: scale(1.15);
+    }
+
+    .copyright p {
+        font-size: 1.25em;
+    }
+
+    .copyright p:nth-child(3){
+        display: block;
+    }
+
+    .copyright a{
+        color: White;
+    }
+
+    .copyright a:hover{
+        cursor: pointer;
+    }
+}
+/* End of Desktop optimization */

@@ -1,0 +1,205 @@
+/* ---------------------MOBILE OPTIMIZATION------------------------*/
+
+.article-outer-container{
+    text-align: center;
+    padding-top: 7em;
+    background-color: white;
+}
+
+.heading{
+    text-align: left;
+    color: #29292e;
+    margin: 7.5% 2% 2% 2%;
+}
+
+#article-img {
+    background-image: url('../imgs/profile.png');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+
+.article-img {
+    background-image: url('../imgs/cover.png');
+    background-position: center;
+    background-size: cover;
+    height: 12em;
+    border: 2px solid salmon;
+    margin: 0.5em 0;
+}
+
+.author-date{
+    display: flex;
+    justify-content: flex-start;
+    font-size: smaller;
+    margin: 2% 2%;
+}
+
+.author-date p{
+    margin: 1.5% 1% 1.5% 0;
+}
+
+.author-date p i{
+    color: #555;
+}
+
+.full-content{
+    text-align: left;
+    padding: 10% 2%;
+    white-space: pre-line;
+    line-height: 175%;
+    color: rgb(75, 80, 80);
+}
+
+#disqus_thread{
+    margin: 25% 5%;
+}
+
+/* ME ME ME ME ME ME */
+.article-outer-container {
+    text-align: left;
+}
+
+.article-inner-container img{
+    margin-bottom: 5%;
+    max-height: 18em;
+}
+
+.article-inner-container p{
+    margin: 1%;
+    line-height: 150%;
+    white-space: pre-line;
+    color: rgb(75, 80, 80);
+    padding: 0% 2%;
+    font-size: 1.05em;
+}
+
+.article-inner-container h2 {
+    font-size: 1.5em;
+    margin: 3%;
+}
+
+.article-inner-container em, h2{
+    color:rgb(75, 80, 80);
+}
+
+/* ---------------------TABLET OPTIMIZATION------------------------*/
+@media only screen and (min-device-width: 37em){
+
+    .article-inner-container{
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .article-inner-container img {
+        min-height: 18em;
+    }
+
+    .article-inner-container img:first-of-type {
+        min-height: 20em;
+    }
+
+    .article-inner-container h1 {
+        margin: 1.25em 0 0.5em 0;
+    }
+
+    .article-inner-container h2 {
+        font-size: 1.75em;
+        margin: 1% 1% 2% 1%;
+    }
+
+    .article-inner-container p {
+        font-size: 1.25em;
+        padding: 0;
+    }
+
+    #disqus_thread {
+        margin: 15%;
+    }
+}
+
+
+
+/* ---------------------DESKTOP OPTIMIZATION------------------------*/
+
+@media only screen and (min-device-width: 64em){
+    
+    .article-inner-container{
+        width: 55%;
+    }
+
+    .article-inner-container img {
+        max-width: 80%;
+        min-height: 18em;
+    }
+
+    .article-inner-container img:first-of-type{
+        min-width: 100%;
+        min-height: 18em;
+        max-height: 32em;
+    }
+
+    .article-inner-container h1{
+        font-size: 3.5em;
+        margin: 0.75em 0 0.25em 0;
+    }
+
+    .article-inner-container h2 {
+        font-size: 2.25em;
+        margin: 1% 1% 2% 1%;
+    }
+
+    .article-inner-container p{
+        font-size: 1.5em;
+        padding: 0;
+        letter-spacing: 0.01em;
+        line-height: 1.2em;
+    }
+
+    .article-inner-container em{
+        color: #29292e;
+        font-size: 0.8em;
+    }
+
+    #disqus_thread{
+        width: 55%;
+        margin: 12em auto;
+    }
+
+    /* .heading{
+        width: 60%;
+        display: inline-block;
+        font-size: 4.75em;
+        margin: 0.75em 0 0 0;
+    }
+
+    .article-img{
+        width: 60%;
+        height: 30em;
+        margin: 0;
+        display: inline-block;
+    } */
+
+    /* .author-date{
+        width: 60%;
+        display: inline-block;
+        font-size: larger;
+        text-align: left;
+    }
+
+    .author-date p{
+        display: inline-block;
+    }
+
+    .full-content{
+        width: 60%;
+        padding: 2% 2%;
+        font-size: 1.5em;
+    }
+
+    #disqus_thread{
+        width: 60%;
+        display: inline-block;
+    } */
+}
+/* End of desktop optimization */
