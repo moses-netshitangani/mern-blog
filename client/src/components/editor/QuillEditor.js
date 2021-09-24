@@ -262,7 +262,7 @@ class QuillEditor extends React.Component {
             }
             formData.append("file", file);
 
-            axios.post('http://localhost:3000/articles/uploadfiles', formData, config)
+            axios.post('/articles/uploadfiles', formData, config)
                 .then(response => {
                     if (response.data.success) {
                         const quill = this.reactQuillRef.getEditor();
@@ -273,7 +273,7 @@ class QuillEditor extends React.Component {
 
                         //먼저 노드 서버에다가 이미지를 넣은 다음에   여기 아래에 src에다가 그걸 넣으면 그게 
                         //이미지 블롯으로 가서  크리에이트가 이미지를 형성 하며 그걸 발류에서     src 랑 alt 를 가져간후에  editorHTML에 다가 넣는다.
-                        quill.insertEmbed(position, "image", { src: "http://localhost:3000/" + response.data.url, alt: response.data.fileName });
+                        quill.insertEmbed(position, "image", { src: "/" + response.data.url, alt: response.data.fileName });
                         quill.setSelection(position + 1);
 
                         if (this._isMounted) {
@@ -310,7 +310,7 @@ class QuillEditor extends React.Component {
 
                         let range = quill.getSelection();
                         let position = range ? range.index : 0;
-                        quill.insertEmbed(position, "video", { src: "http://localhost:3000/" + response.data.url, title: response.data.fileName });
+                        quill.insertEmbed(position, "video", { src: "/" + response.data.url, title: response.data.fileName });
                         quill.setSelection(position + 1);
 
                         if (this._isMounted) {
