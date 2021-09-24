@@ -282,7 +282,8 @@ class QuillEditor extends React.Component {
                             }, () => { this.props.onFilesChange(this.state.files) });
                         }
                     } else {
-                        return alert('failed to upload file')
+                        console.log(response);
+                        return alert('failed to upload file');
                     }
                 })
         }
