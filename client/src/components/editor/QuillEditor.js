@@ -262,7 +262,7 @@ class QuillEditor extends React.Component {
             }
             formData.append("file", file);
 
-            axios.post('/articles/uploadfiles', formData, config)
+            axios.post('https://damp-castle-54661.herokuapp.com/articles/uploadfiles', formData, config)
                 .then(response => {
                     if (response.data.success) {
                         const quill = this.reactQuillRef.getEditor();
