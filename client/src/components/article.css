@@ -140,7 +140,7 @@
     .article-inner-container img:first-of-type{
         min-width: 100%;
         min-height: 18em;
-        max-height: 32em;
+        /* max-height: 32em; */
     }
 
     .article-inner-container h1{
