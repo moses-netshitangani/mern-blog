@@ -5,8 +5,9 @@
     border-radius: 5px;
     text-align: center;
     position: fixed;
-    left: 0;
-    right: 0;
+    left: 50%;
+    top: 50%;
+    margin-left: -7.5em;
     z-index: 999;
     animation: pop 1s;
 }
