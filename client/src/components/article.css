@@ -65,8 +65,12 @@
     max-height: 18em;
 }
 
+.article-inner-container h1 {
+    margin: 1.25em 0.5em;
+}
+
 .article-inner-container p{
-    margin: 1%;
+    margin: 2.5%;
     line-height: 150%;
     white-space: pre-line;
     color: rgb(75, 80, 80);
