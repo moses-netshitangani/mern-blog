@@ -196,7 +196,8 @@
     }
 
     .article img, .article iframe, .article video{
-        height: 70%;
+        min-height: 70%;
+        max-height: 70%;
         min-width: 20em;
         max-width: 20em;
         border-bottom-right-radius: 0;
