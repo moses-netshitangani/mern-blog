@@ -422,6 +422,22 @@ a{
         position: absolute;
     }
 
+    .icons {
+        height: 45px;
+        width: 45px;
+        margin: 0 2%;
+    }
+
+    .add {
+        width: 45px;
+        height: 45px;
+        margin: 0 2%;
+        background-image: url('../imgs/new.png');
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+    }
+
     /*---------------------Burger Menu---------------*/
     .burger{
         display: none;
@@ -439,8 +455,8 @@ a{
         background-image: url('../imgs/user\ icon.png');
         background-position: center;
         background-size: cover;
+        cursor: pointer;
     }
-
 
     .login-grey{
         padding-top: 7em;

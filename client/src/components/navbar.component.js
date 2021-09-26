@@ -94,6 +94,14 @@ const Navbar = props => {
     // login icon state
     const [login_icon, setLoginIcon] = useState("login-icon");
 
+    // add blog state
+    const [add_icon, setAddIcon] = useState("hide");
+
+    // navigate to the admin page
+    const navAdmin = () => {
+        window.location.href = "/admin";
+    }
+
 
     // hide login icon in admin page
     useEffect(() => 
@@ -101,6 +109,7 @@ const Navbar = props => {
         if(window.location.href.includes("admin"))
         {
            setLoginIcon("hide");
+           setAddIcon("add");
         }
 
         let loginComp = document.getElementById("login");
@@ -166,7 +175,10 @@ const Navbar = props => {
                         props.onAuthChange(props.authComp.isAuthenticated());
 
                         // navigate to /admin
-                        window.location.href = "/admin";
+                        setLoginIcon("hide");
+                        closeLogin();
+                        setAddIcon("add");
+                        // window.location.href = "/admin";
                     }
                     else
                     {
@@ -198,8 +210,15 @@ const Navbar = props => {
                         </Link> 
                     </div>
                     
-                    {/* The admin login icon */}
-                    <div className={login_icon} onClick={openLogin}>
+                    {/* login icon superimposing add icon */}
+                    <div className="icons">
+                        {/* The admin login icon */}
+                        <div className={login_icon} onClick={openLogin}>
+                        </div>
+
+                        {/* The add post icon */}
+                        <div className={add_icon} onClick={navAdmin}>
+                        </div>
                     </div>
 
                     {/* The burger menu */}
